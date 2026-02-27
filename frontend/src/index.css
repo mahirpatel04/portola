@@ -1,0 +1,240 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Transactions table */
+.root-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.root-page h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.75rem;
+}
+
+.top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.super-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.super-toggle label {
+  font-weight: 500;
+  cursor: pointer;
+}
+.super-toggle input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.clear-selected-btn {
+  padding: 0.5em 1em;
+}
+.clear-selected-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.transactions-table .col-select {
+  width: 2.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.select-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.root-message {
+  margin: 0;
+  padding: 1rem;
+}
+
+.root-error {
+  color: #f87171;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.transactions-table th {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.transactions-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.transactions-table tbody tr.row-high-amount {
+  background: rgba(248, 113, 113, 0.2);
+}
+.transactions-table tbody tr.row-high-amount:hover {
+  background: rgba(248, 113, 113, 0.28);
+}
+
+.transactions-table .empty-cell {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.status-pending { background: rgba(251, 191, 36, 0.25); color: #fbbf24; }
+.status-failed { background: rgba(248, 113, 113, 0.25); color: #f87171; }
+.status-cleared { background: rgba(74, 222, 128, 0.25); color: #4ade80; }
+
+.clear-funds-btn {
+  padding: 0.4em 0.75em;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+.clear-funds-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: light) {
+  .table-wrap {
+    border-color: #e5e7eb;
+    background: #fafafa;
+  }
+  .transactions-table th,
+  .transactions-table td {
+    border-bottom-color: #e5e7eb;
+  }
+  .transactions-table th {
+    background: #f3f4f6;
+    color: #111827;
+  }
+  .transactions-table tbody tr:hover {
+    background: #f9fafb;
+  }
+  .transactions-table tbody tr.row-high-amount {
+    background: rgba(220, 38, 38, 0.12);
+  }
+  .transactions-table tbody tr.row-high-amount:hover {
+    background: rgba(220, 38, 38, 0.18);
+  }
+  .transactions-table .empty-cell {
+    color: #6b7280;
+  }
+  .status-pending { background: #fef3c7; color: #92400e; }
+  .status-failed { background: #fee2e2; color: #991b1b; }
+  .status-cleared { background: #d1fae5; color: #065f46; }
+}
